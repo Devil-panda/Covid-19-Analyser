@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>COVID-19 Analysis</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>COVID-19 Analysis</h1>
+    </header>
+    
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    
+    <table>
+      <tr>
+        <th>Province/State</th>
+        <th>Confirmed</th>
+        <th>Deaths</th>
+        <th>Recovered</th>
+        <th>Active</th>
+      </tr>
+      {% for country, confirmed, death, recovered, active in pairs %}
+      <tr>
+        <td>{{ country }}</td>
+        <td>{{ confirmed }}</td>
+        <td>{{ death }}</td>
+        <td>{{ recovered }}</td>
+        <td>{{ active }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    
+    <div id="map-container">
+      {{ cmap|safe }}
+    </div>
+
+    <div>
+    <footer class="footer">
+      <p>&copy; Python Mini Project By Arya & Amey 🙂</p>
+    </footer>
+  </div>
+    
+  </body>
+</html>
